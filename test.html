@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="serach">
+        <label for="apartment">Choose apartments:</label>
+
+        <select id="list">
+            <option value="1b" selected>1 bedroom</option>
+            <option value="2b">2 bedroom</option>
+        </select>
+
+        <button type="button" onclick="searchApartment()">Search</button>
+        <!-- <p id="result">United State</p> -->
+
+    </div>
+    <script>
+        function searchApartment() {
+            var e = document.getElementById("list");
+            var ap = e.options[e.selectedIndex].text;
+            var hide = document.getElementsByClassName("icon");
+            for (var i = 0; i < hide.length; i++) {
+                hide[i].style.visibility = "hidden";
+            }
+            if (ap === "1 bedroom") {
+                var ap1 = document.getElementsByClassName("1b");
+                for (var i = 0; i < ap1.length; i++) {
+                    ap1[i].style.visibility = "visible";
+                }
+            }
+            if (ap === "2 bedroom") {
+                var ap2 = document.getElementsByClassName("2b");
+                for (var i = 0; i < ap2.length; i++) {
+                    ap2[i].style.visibility = "visible";
+                }
+            }
+        }
+    </script>
+    <div class="imagemap">
+        <img src="map.PNG">
+    </div>
+    <i class="fas fa-map-marker-alt fa-2x icon 1b" id="m114"></i>
+    <i class="fas fa-map-marker-alt fa-2x icon 1b" id="m135"></i>
+    <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m205"></i>
+    <i class="fas fa-map-marker-alt fa-2x icon 2b" id="m226"></i>
+
+
+
+    <!-- <script src="" async defer></script> -->
+</body>
+
+</html>
